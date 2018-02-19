@@ -1,0 +1,89 @@
+{% load i18n %} {% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{seo_title}}</title>
+    <meta name="Keywords" content="{{seo_keywords}}">
+    <meta name="Description" content="{{seo_description}}">
+    <meta name="Content-Language" content="{{lang}}"> {% include "add_styles.html" %}
+</head>
+
+<body>
+    {% include "header_almaz_p.html" %}
+
+    <div id="h_rooms" class="my_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="block col-md-4">
+                    <div class="white-space">{% trans "Ліжкомісце" %}</div>
+                    <img src="{% static 'img/blocks/alm-p-lijkomisce.jpg' %}" class="img-responsive">
+                    <div class="block-bottom">
+                        <h2>{% trans "160 грн." %}</h2>
+                        <a class="btn-1" href="{% url 'booking' %}">{% trans "Забронювати" %}</a>
+                    </div>
+                </div>
+
+                <div class="block col-md-4">
+                    <div class="white-space">{% trans "Стандарт" %}</div>
+                    <img src="{% static 'img/blocks/alm-p-standart.jpg' %}" class="img-responsive">
+                    <div class="block-bottom">
+                        <h2>{% trans "Від 320 грн." %}</h2>
+                        <a class="btn-1" href="{% url 'booking' %}">{% trans "Забронювати" %}</a>
+                    </div>
+                </div>
+
+                <div class="block col-md-4">
+                    <div class="white-space">{% trans "Напівлюкс" %}</div>
+                    <img src="{% static 'img/blocks/alm-p-half-lux.jpg' %}" class="img-responsive">
+                    <div class="block-bottom">
+                        <h2>{% trans "400 грн." %}</h2>
+                        <a class="btn-1" href="{% url 'booking' %}">{% trans "Забронювати" %}</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="my_wrapper">
+        <div id="almaz_plus_description">
+
+            <div class="container">
+                <div class="my_almaz_plus">
+                    <h2>{% trans "Алмаз-плюс" %}</h2>
+
+                    <p>{% trans "Готельний комплекс Алмаз-Плюс введений в експлуатацію в 2016 році. Розташований 340 кілометрі автомагістралі Київ - Харків." %}</p>
+                    <p>{% trans "Запрошуємо відпочити в сучасних комфортних номерах категорії стандарт та люкс. Номери оснащені окремою ванною кімнатою, односпальними або двоспальними ліжками, цифровим телебаченням." %}
+                    </p>
+                    <p>{% trans "В номерах категорії люкс відділена зона для відпочинку та прийому гостей." %}
+                    </p>
+                    <p>{% trans "На території готелю працює безкоштовний вай-фай, парковка, TIR-парковка, літній майданчик. На 2 поверсі оснащений банкетний зал на 50 осіб для проведення святкувань, конференцій та ділових зустрічей." %}
+                    </p>
+
+                    <p>
+                        <div class="my_service_icons">
+                            <img src="{% static 'img/hotel/wifi.png' %}" title="WiFI">
+                            <img src="{% static 'img/hotel/tv.png' %}" title='{% trans "Кабельне ТБ" %}'>
+                            <img src="{% static 'img/hotel/serv-shower.svg' %}" title='{% trans "Душ" %}'>
+                            <img src="{% static 'img/hotel/clothes.png' %}" title='{% trans "Рушники" %}'>
+                            <img src="{% static 'img/hotel/serv-no-smoking-sign.svg' %}" title='{% trans "Не палять" %}'>
+                            <img src="{% static 'img/hotel/no-anim.png' %}" title='{% trans "З тваринами заборонено" %}'>
+                        </div>
+                    </p>
+
+                    <p>
+                        <div>
+                            <a class="btn-2" href="{% url 'booking' %}">{% trans "Забронювати" %}</a>
+                        </div>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="my_scroll_up"></a> {% include "footer_almaz_p.html" %} {% include "add_scripts.html" %}
+</body>
+
+</html>

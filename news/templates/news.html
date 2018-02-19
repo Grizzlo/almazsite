@@ -1,0 +1,40 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{seo_title}}</title>
+  <meta name="Keywords" content="{{seo_keywords}}">
+  <meta name="Description" content="{{seo_description}}">
+  <meta name="Content-Language" content="{{lang}}">
+  {% include "add_styles.html" %}
+</head>
+<body>
+{% include "header.html" %}
+
+<div class="my_wrapper">
+    <div class="container">
+        {% for i in news %}
+            <div class="row my_article">
+
+                <div class="col-sm-2 col-md-2 col-lg-2 my_article_img">
+                    <img src="{{i.image.url}}">
+                </div>
+                <div class="col-sm-10 col-md-10 col-lg-10">
+                    <h6>{{ i.article_date }}</h6>
+                    <h4><a href="/news/{{ i.id }}/">{{ i.title }}</a></h4>
+                    <p class="my_article_pre">{{ i.text }}</p>
+                    <a href="/news/{{ i.id }}/"><b>{% trans "Читати далі..." %}</b></a>
+                </div>
+
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<a href="#" class="my_scroll_up"></a>
+
+{% include "footer.html" %}
+{% include "add_scripts.html" %}
+</body>
+</html>

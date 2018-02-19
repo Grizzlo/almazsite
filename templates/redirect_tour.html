@@ -1,0 +1,27 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% trans "Дякуємо!" %}</title>
+    {% include "add_styles.html" %}
+</head>
+<body>
+{% include "header.html" %}
+
+<div class="my_wrapper">
+<div class="container">
+    <div class="my_redirect">
+        <h2>{% trans "Ви замовили тур!" %} </h2>
+        <h2>{% trans "Найближчим часом з Вами зв'яжеться адміністратор для узгодження деталей" %}</h2>
+        <div>
+            <img src="{% static "img/logo/almaz_old.svg" %}">
+        </div>
+    </div>
+</div>
+</div>
+
+{% include "footer.html" %}
+{% include "add_scripts.html" %}
+</body>
+</html>

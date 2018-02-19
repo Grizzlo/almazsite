@@ -1,0 +1,50 @@
+{% load i18n staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{seo_title}}</title>
+    <meta name="Keywords" content="{{seo_keywords}}">
+    <meta name="Description" content="{{seo_description}}">
+    <meta name="Content-Language" content="{{lang}}">
+    {% include "add_styles.html" %}
+</head>
+
+<body>
+    {% include "header.html" %}
+
+    <div class="my_wrapper">
+        <div class="container">
+
+            <br>
+            <!-- Category buttons -->
+            <button class="btn btn-small btn-gallery" data-toggle="portfilter" data-target="all">
+                {% trans "Всі фото" %}
+            </button> {% for slug,cat in categories %}
+            <button class="btn btn-small btn-gallery" data-toggle="portfilter" data-target="{{slug}}">
+                {{cat}}
+            </button> {% endfor %}
+
+            <!-- Photos -->
+            <div class="row portfolio-area">
+                {% for image in images %}
+                <div class="col-xs-12 col-sm-4 col-md-3 portfolio-item2" data-id="id-0" data-tag="{{image.album.slug}}">
+                    <span class="image-block">
+					                 <a class="image-zoom" href="{{image.image.url}}" rel="prettyPhoto[gallery]"
+                       title="Picture" target="_blank"><img src="{{image.image.url}}" alt="Picture"
+                                           title="Picture" />
+                    </a>
+                    </span>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+
+    <a href="#" class="my_scroll_up"></a> {% include "footer.html" %}
+
+    {% include "add_scripts.html" %}
+    <script type="text/javascript" src="{% static "js/gallery.js" %}"></script>
+</body>
+</html>

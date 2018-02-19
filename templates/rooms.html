@@ -1,0 +1,123 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{seo_title}}</title>
+    <meta name="Keywords" content="{{seo_keywords}}">
+    <meta name="Description" content="{{seo_description}}">
+    <meta name="Content-Language" content="{{lang}}">
+    {% include "add_styles.html" %}
+</head>
+<body>
+{% include "header.html" %}
+
+<div class="my_wrapper">
+    <div class="container">
+
+        <h2>{% trans "Номери" %}</h2>
+
+        <div class="row my_article">
+            <div class="col-sm-4 col-md-3 col-lg-3 my_article_img">
+                <img src="{% static "img/blocks/standart.jpg" %}">
+            </div>
+            <div class="col-sm-8 col-md-9 col-lg-9">
+                <div class="row">
+                    <h1 class="col-sm-6 col-md-6">{% trans "Стандарт" %}</h1>
+                    <div class="col-sm-6 col-md-6 hidden-xs">
+                        <a class="btn-2" href="{% url 'booking' %}" style="margin: 0 14px 0 0; float: right">{% trans "Забронювати" %}</a>
+                    </div>
+                </div>
+                <h4>{% trans "Ціна: від 170 грн." %}</h4>
+                <p>{% trans "Двомісні та тримісні номери об’єднані в секції з двох номерів. Обладнані зручними односпальними ліжками,холодильником та телевізором. В секціях є туалет та душ, де цілодобово наявна гаряча вода." %}
+                </p>
+                <div class="visible-xs">
+                    <a class="btn-2" href="{% url 'booking' %}" style="margin: 0 0 10px 0;">{% trans "Забронювати" %}</a>
+                </div>
+                <div class="my_service_icons">
+                    <img src="{% static "img/hotel/wifi.png" %}" title="WiFI">
+                    <img src="{% static "img/hotel/tv.png" %}" title='{% trans "Кабельне ТБ" %}'>
+                    <img src="{% static "img/hotel/serv-shower.svg" %}" title='{% trans "Душ" %}'>
+                    <img src="{% static "img/hotel/clothes.png" %}" title='{% trans "Рушники" %}'>
+                    <img src="{% static "img/hotel/serv-no-smoking-sign.svg" %}" title='{% trans "Не палять" %}'>
+                    <img src="{% static "img/hotel/no-anim.png" %}" title='{% trans "З тваринами заборонено" %}'>
+                    <img src="{% static "img/hotel/serv-fridge.svg" %}" title='{% trans "Холодильник" %}'>
+                    <img src="{% static "img/hotel/serv-air-conditioner.svg" %}" title='{% trans "Кондиціонер" %}'>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row my_article">
+            <div class="col-sm-4 col-md-3 col-lg-3 my_article_img">
+                <img src="{% static "img/blocks/half-lux.jpg" %}">
+            </div>
+            <div class="col-sm-8 col-md-9 col-lg-9">
+                <div class="row">
+                    <h1 class="col-sm-6 col-md-6">{% trans "Напівлюкс" %}</h1>
+                    <div class="col-sm-6 col-md-6 hidden-xs">
+                        <a class="btn-2" href="{% url 'booking' %}" style="margin: 0 14px 0 0; float: right">{% trans "Забронювати" %}</a>
+                    </div>
+                </div>
+                <h4>{% trans "Ціна: від 350 грн." %}</h4>
+                <p>{% trans "Кожен номер обладнаний ванною кімнатою, бойлером, одно- та двоспальними ліжками, телевізором холодильником, кондиціонером та посудом." %}
+                </p>
+                <div class="visible-xs">
+                    <a class="btn-2" href="{% url 'booking' %}" style="margin: 0 0 10px 0;">{% trans "Забронювати" %}</a>
+                </div>
+                <div class="my_service_icons">
+                    <img src="{% static "img/hotel/wifi.png" %}" title="WiFI">
+                    <img src="{% static "img/hotel/tv.png" %}" title='{% trans "Кабельне ТБ" %}'>
+                    <img src="{% static "img/hotel/serv-shower.svg" %}" title='{% trans "Душ" %}'>
+                    <img src="{% static "img/hotel/clothes.png" %}" title='{% trans "Рушники" %}'>
+                    <img src="{% static "img/hotel/serv-no-smoking-sign.svg" %}" title='{% trans "Не палять" %}'>
+                    <img src="{% static "img/hotel/no-anim.png" %}" title='{% trans "З тваринами заборонено" %}'>
+                    <img src="{% static "img/hotel/serv-fridge.svg" %}" title='{% trans "Холодильник" %}'>
+                    <img src="{% static "img/hotel/serv-air-conditioner.svg" %}" title='{% trans "Кондиціонер" %}'>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my_article">
+            <div class="col-sm-4 col-md-3 col-lg-3 my_article_img">
+                <img src="{% static "img/blocks/lux.jpg" %}">
+            </div>
+            <div class="col-sm-8 col-md-9 col-lg-9">
+                <div class="row">
+                    <h1 class="col-sm-6 col-md-6">{% trans "Люкс" %}</h1>
+                    <div class="col-sm-6 col-md-6 hidden-xs">
+                        <a class="btn-2" href="{% url 'booking' %}" style="margin: 0 14px 0 0; float: right">{% trans "Забронювати" %}</a>
+                    </div>
+                </div>
+                <h4>{% trans "Ціна: від 500 грн." %}</h4>
+                <p>{% trans "Двокімнатні номери(вітальня та спальня) обладнані ванною кімнатою. Вітальня обладнана зручними меблями для відпочинку, журнальним столиком та телевізором.У спальні розташоване двоспальне ліжко або два односпальних." %}
+                </p>
+                <div class="visible-xs">
+                    <a class="btn-2" href="{% url 'booking' %}" style="margin: 0 0 10px 0;">{% trans "Забронювати" %}</a>
+                </div>
+                <div class="my_service_icons">
+                    <img src="{% static "img/hotel/wifi.png" %}" title="WiFI">
+                    <img src="{% static "img/hotel/tv.png" %}" title='{% trans "Кабельне ТБ" %}'>
+                    <img src="{% static "img/hotel/serv-shower.svg" %}" title='{% trans "Душ" %}'>
+                    <img src="{% static "img/hotel/clothes.png" %}" title='{% trans "Рушники" %}'>
+                    <img src="{% static "img/hotel/serv-bathrobe.svg" %}" title='{% trans "Халат" %}'>
+                    <img src="{% static "img/hotel/serv-flip-flops.svg" %}" title='{% trans "Тапочки" %}'>
+                    <img src="{% static "img/hotel/serv-no-smoking-sign.svg" %}" title='{% trans "Не палять" %}'>
+                    <img src="{% static "img/hotel/no-anim.png" %}" title='{% trans "З тваринами заборонено" %}'>
+                    <img src="{% static "img/hotel/serv-fridge.svg" %}" title='{% trans "Холодильник" %}'>
+                    <img src="{% static "img/hotel/serv-air-conditioner.svg" %}" title='{% trans "Кондиціонер" %}'>
+                    <img src="{% static "img/hotel/serv-hair-dryer.svg" %}" title='{% trans "Фен" %}'>
+                    <img src="{% static "img/hotel/serv-cream.svg" %}" title='{% trans "Косметика" %}'>
+                    <img src="{% static "img/hotel/serv-kettle.svg" %}" title='{% trans "Електрочайник" %}'>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="#" class="my_scroll_up"></a>
+
+{% include "footer.html" %}
+{% include "add_scripts.html" %}
+</body>
+</html>

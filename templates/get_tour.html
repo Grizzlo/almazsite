@@ -1,0 +1,98 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% trans "Замовлення туру" %}</title>
+    {% include "add_styles.html" %}
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+<body>
+{% include "header.html" %}
+
+<div class="my_wrapper">
+    <div class="container">
+        <div id="my_booking">
+            <h2>{% trans "Замовлення туру" %}</h2>
+            <div class="row">
+              {% block content %}
+                <form id="form-tour" class="form-horizontal col-sm-offset-1 col-sm-9 col-md-offset-1 col-md-8"
+                      method="post">{% csrf_token %}
+                    <div class="form-group">
+                        <label for='{{tour.username.id_for_label}}' class="col-sm-4 col-md-4 control-label">{% trans "Прізвище, ім'я" %}</label>
+                        <div class="col-sm-8 col-md-8">
+                            {{tour.username}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for='{{tour.tel_user_phone.id_for_label}}' class="col-sm-4 col-md-4 control-label">{% trans "Телефон" %}</label>
+                        <div class="col-sm-8 col-md-8">
+                            {{tour.tel_user_phone}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for='{{tour.user_email.id_for_label}}' class="col-sm-4 col-md-4 control-label">{% trans "Електронна адреса" %}</label>
+                        <div class="col-sm-8 col-md-8">
+                              {{tour.user_email}}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for='{{tour.tour_name.id_for_label}}' class="col-sm-4 col-md-4 control-label">{% trans "Тур" %}</label>
+
+                        <div class="col-sm-8 col-md-8">
+                            {{tour.tour_name}}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for='{{tour.date_entry.id_for_label}}' class="col-sm-4 col-md-4 control-label">{% trans "Дата виїзду" %}</label>
+
+                        <div class="col-sm-8 col-md-8">
+                            {{tour.date_entry}}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for='{{tour.number_of_people.id_for_label}}' class="col-sm-4 col-md-4 control-label">{% trans "Кількість людей" %}</label>
+
+                        <div class="col-sm-8 col-md-8">
+                              {{tour.number_of_people}}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for='{{tour.user_comment.id_for_label}}' class="col-sm-4 col-md-4 control-label">{% trans "Додаткові послуги або коментар" %}</label>
+                        <div class="col-sm-8 col-md-8">
+                          {{tour.user_comment}}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-8 col-md-offset-4 col-md-8">
+                            <button type="submit" class="btn-2">{% trans "Забронювати" %}</button>
+                        </div>
+                    </div>
+                </form>
+                {% endblock %}
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+{% include "footer.html" %}
+{% include "add_scripts.html" %}
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+<script src="{% static "js/i18n/datepicker-uk.js" %}"></script>
+<script src="{% static "js/i18n/datepicker-ru.js" %}"></script>
+<script type="text/javascript" src="{% static "js/valid_tour.js" %}"></script>
+
+
+</body>
+</html>

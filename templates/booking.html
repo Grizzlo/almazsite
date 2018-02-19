@@ -1,0 +1,120 @@
+{% load i18n %} {% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{seo_title}}</title>
+    <meta name="Keywords" content="{{seo_keywords}}">
+    <meta name="Description" content="{{seo_description}}">
+    <meta name="Content-Language" content="{{lang}}"> {% include "add_styles.html" %}
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+<body>
+
+    {% include "header.html" %}
+
+    <div class="my_wrapper">
+        <div class="container">
+            <div id="my_booking">
+                <h2>{% trans "Забронювати номер" %}</h2>
+                <div class="row">
+                    {% block content %}
+                    <form id="form-booking" class="form-horizontal col-sm-offset-1 col-sm-9 col-md-offset-1 col-md-8" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <div class="col-sm-offset-4 col-sm-8 col-md-offset-4 col-md-8">
+                                {% trans "Увага! Заселення в номер різної кількості людей має різну ціну. Деталі тут:" %}
+                                <a href="{% static 'price2017.pdf' %}" target="_blank">{% trans "Ціни на номери 2017" %}</a>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for='{{booking.username.id_for_label}}' class="col-sm-4 col-md-4 control-label">{% trans "Прізвище, ім'я" %}</label>
+                            <div class="col-sm-8 col-md-8">
+                                {{booking.username}}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for='{{booking.tel_user_phone.id_for_label}}' class="col-sm-4 col-md-4 control-label">{% trans "Телефон" %}</label>
+                            <div class="col-sm-8 col-md-8">
+                                {{booking.tel_user_phone}}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for='{{booking.user_email.id_for_label}}' class="col-sm-4 col-md-4 control-label">{% trans "Електронна адреса" %}</label>
+                            <div class="col-sm-8 col-md-8">
+                                {{booking.user_email}}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for='{{booking.hotel.id_for_label}}' class="col-sm-4 col-md-4 control-label">{% trans "Готель" %}</label>
+                            <div class="col-sm-8 col-md-8">
+                                {{booking.hotel}}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for='{{booking.room_class.id_for_label}}' class="col-sm-4 col-md-4 control-label">{% trans "Клас кімнати" %}</label>
+                            <div class="col-sm-8 col-md-8">
+                                {{booking.room_class}}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for='{{booking.date_entry.id_for_label}}' class="col-sm-4 col-md-4 control-label">{% trans "Дата заселення" %}</label>
+
+                            <div class="col-sm-8 col-md-8">
+                                {{booking.date_entry}}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for='{{booking.date_out.id_for_label}}' class="col-sm-4 col-md-4 control-label">{% trans "Дата виселення" %}</label>
+                            <div class="col-sm-8 col-md-8">
+                                {{booking.date_out}}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for='{{booking.number_of_people.id_for_label}}' class="col-sm-4 col-md-4 control-label">{% trans "Кількість людей" %}</label>
+                            <div class="col-sm-8 col-md-8">
+                                {{booking.number_of_people}}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for='{{booking.user_comment.id_for_label}}' class="col-sm-4 col-md-4 control-label">{% trans "Додатковий коментар" %}</label>
+
+                            <div class="col-sm-8 col-md-8">
+                                {{booking.user_comment}}
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-4 col-sm-8 col-md-offset-4 col-md-8">
+                                <button type="submit" class="btn-2">{% trans "Забронювати" %}</button>
+                            </div>
+                        </div>
+
+                    </form>
+                    {% endblock %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="my_scroll_up"></a> {% include "footer.html" %} {% include "add_scripts.html" %}
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="{% static "js/i18n/datepicker-uk.js" %}"></script>
+    <script src="{% static "js/i18n/datepicker-ru.js" %}"></script>
+    <script type="text/javascript" src="{% static "js/valid_booking.js" %}"></script>
+</body>
+
+</html>

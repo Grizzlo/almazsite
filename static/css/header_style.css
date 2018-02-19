@@ -1,0 +1,102 @@
+*{padding:0;margin:0;}
+#header-part1{background-color:#811414;color:#e8c769;padding:0;height:60px;}
+.navbar{margin:0;padding:10px 0 0 0;border:0;}
+.navbar-toggle{margin:10px;
+  border: 0;
+  /* border:2px solid #e8c769; */
+}
+.icon-bar{border:1px solid #e8c769;}
+.navbar-toggle:hover{
+  background-color:#811414;
+  border: 0;
+}
+.navbar-toggle:hover .icon-bar{
+  border: 1px solid #ffffff;
+}
+.my-menu a, .my-menu a:visited, .my-menu a:link{display:inline-block;text-decoration:none;font-family:'Cormorant Infant',serif;font-size:14pt;color:#e8c769;background-color:#811414 !important;padding-right:12px;padding-left:12px;}
+.my-menu a:hover, .my-menu a:active{background-color:#811414 !important;text-decoration:none;color:#ffffff;height:100%;}
+.my-menu li{background-color:#811414;}
+@media screen and (max-width:767px){.my-menu li:first-child{margin-top:-10px;}
+}
+#search-block{padding:10px 0 10px 0;}
+#search-input{background:#811414;border:none;outline:none;width:140px;height:24px;float:right;border-bottom:1px solid #E8C769;padding:15px 15px 15px 5px;}
+#search-input::-webkit-input-placeholder{color:rgba(232, 199, 105, 0.5);}
+#search-button{border:none;float:right;outline:none;padding-bottom:0;}
+a.btn_search{background:url("../img/icons/ico-search.svg");}
+a.btn_search:hover{background:url("../img/icons/ico-search-hover.svg");}
+.btn_search{background-size:contain !important;display:inline-block;width:30px;height:30px;}
+.icon-loupe, .glyphicon-briefcase, .glyphicon-globe, .glyphicon-earphone{font-size:30px;color:#E8C769;}
+.icon-loupe:hover, .glyphicon-briefcase:hover, .glyphicon-globe:hover, .glyphicon-earphone:hover{color:#ffffff;}
+select, #my_lang form{padding:0;margin:0 3px 0 3px;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;background:#811414;color:#e8c769;border:1px solid rgba(232, 199, 105, 0.5);outline:none;display:inline-block;cursor:pointer;width:54px;height:30px;font-weight:700;float:right;}
+#my_lang{padding:10px 0 10px 0;}
+@media screen and (max-width: 991px) and (min-width: 0){#my_lang{padding: 0;}
+}
+#my_lang img{width:30px;float:right;}
+#my_lang form ul{min-width:54px;border:1px solid rgba(232, 199, 105, 0.5);border-radius:0;padding:0;margin:0;left:-1px;}
+#my_lang form li{background:#811414;color:#e8c769;border:0;padding:0;margin:0;}
+#my_lang form button{background:#811414;color:#e8c769;border:0;width:52px;padding:0 0 0 5px;text-align:left;font-family:inherit;font-size:15px;font-weight:700;}
+#my_lang form button:hover{background-color:rgba(232, 199, 105, 0.5);}
+#my_lang a, #my_lang a:hover{color:#e8c769 !important;display:block;position:relative;padding:4px 5px;text-decoration:none;}
+.href-button-reserve, .href-button-reserve:visited, .href-button-reserve:link{background:#000000;display:inline-block;text-decoration:none;font-family:'Cormorant Infant', serif;font-size:17pt;color:#e8c769;padding:10px 15px 20px 15px;position:absolute;}
+.href-button-reserve:hover, .href-button-reserve:active{background:#000000;text-decoration:none;color:#ffffff;}
+.my-xs-sm-ico{float:right;padding:10px 0 0 0;margin:0;}
+.my-xs-sm-ico img, .my-xs-sm-ico i{width:30px;float:right;margin:0 10px 0 0;}
+#my_transparent_background > div{padding:0;margin:0;}
+#my_part2_container{margin:2% 0 2% 0;}
+#my_part2_container > div{padding:0;}
+#my_header_part2{margin-top:60px;padding:0;background-size:100%;background-repeat:no-repeat;max-width:1600px;height:480px;margin-right:auto;margin-left:auto;position:relative;}
+#my_transparent_background{background-color:rgba(255, 255, 255, 0.85);padding:0;display:flex;justify-content:center;height:50%;}
+@media screen and (min-width:992px){#my_header_logo > img{float:left;width:110%;height:auto;margin:0 0 0 2%;}
+}
+@media screen and (max-width:520px){#my_header_logo > img{width:80%;}
+}
+a.phone{background:url(../img/icons/ico-h-phone.svg);}
+a.phone:hover{background:url(../img/icons/ico-h-phone-hover.svg);}
+a.img-link-2, a.img-link-2:hover{background-size:contain;display:inline-block;width:25px;height:25px;margin-right:5px;}
+@media screen and (min-width:1200px){}
+@media screen and (min-width:992px) and (max-width:1200px){}
+@media screen and (min-width:768px) and (max-width:991px){#my_header_part2{height:inherit;}
+#my_transparent_background > div{margin-bottom:15%;}
+#my_header_logo > img{width:40%;height:40%;margin:0;}
+#my_header_logo{display:flex;justify-content:center;}
+#my_header_ico{padding-top:2% !important;display:flex;justify-content:center;}
+#my_menu2{display:flex;justify-content:center;}
+}
+#my_header_logo > img{
+max-height: 118px;
+}
+@media screen and (max-width:767px){#my_header_part2{height:inherit;}
+#my_transparent_background{background-color:rgba(255, 255, 255, 0);}
+#my_transparent_background > div{margin-bottom:11%;}
+#my_header_logo > img{width:80%;height:80%;margin:0;}
+#my_header_logo{display:flex;justify-content:center;}
+}
+.content-background{background:#fff;position:fixed;top:0;right:0;bottom:0;left:0;z-index:-1;}
+.content-background img{top:0;left:0;width:100%;height:auto;pointer-events:none;}
+.content-foreground{top:60px;left:0;width:100%;max-width:1600px;height:auto;margin-right:auto;margin-left:auto;position:relative;}
+@media screen and (min-width:1200px){.content-foreground{top:-5%;}}
+.my_content_container{width:auto;max-width:100%;height:auto;}
+#my_header_ico{padding:0;}
+.header-info p{float:right;padding-right:15px;font-size:17px;}
+.header-info img{width:25px;height:25px;float:right;margin-right:5px;}
+#my_menu2{padding:15% 0 0 0 !important;}
+@media screen and (max-width:991px){#my_menu2{padding:0 !important;}}
+#my_menu2 a, #my_menu2 a:visited, #my_menu2 a:link{display:inline-block;text-decoration:none;font-family:'Cormorant Infant', serif;font-size:13.8pt;font-weight:600;color:#000000;}
+#my_menu2 li:first-child > a, #my_menu2 li:first-child > a:visited, #my_menu2 li:first-child > a:link{
+  background-color: #811414 !important;
+  color: #e8c769 !important;
+  font-weight: 500 !important;
+  margin: 5px;
+  padding: 10px;
+}
+#my_menu2 a:hover, #my_menu2 a:active{background-color:transparent !important;text-decoration:none;color:#811414;height:100%;}
+#my_menu2 li:first-child > a:hover, #my_menu2 li:first-child > a:active {
+  background-color: #811414 !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+}
+@media screen and (max-width:750px){#my_menu2{float:none;}}
+.navbar {
+border: none !important;
+padding-top: 0;
+}

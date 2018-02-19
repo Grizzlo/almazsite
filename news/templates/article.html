@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ article.title }}</title>
+    {% include "add_styles.html" %}
+</head>
+<body>
+{% include "header.html" %}
+
+<div class="my_wrapper">
+<div class="container" id="my_article">
+    <h2>{{ article.title }}</h2>
+    <p>
+        <img src="{{article.image.url}}">
+        {{ article.text }}
+    </p>
+    <br>
+    <div id="my_article_date">
+        {{ article.date }}
+    </div>
+</div>
+</div>
+
+<a href="#" class="my_scroll_up"></a>
+
+{% include "footer.html" %}
+{% include "add_scripts.html" %}
+</body>
+</html>

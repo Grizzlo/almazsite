@@ -1,0 +1,235 @@
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+
+{% load staticfiles %}
+{% block header_almaz_p %}
+    <div id="header-part1" class="navbar-fixed-top">
+        <div class="container">
+            <div class="row">
+
+              <!-- ЧАСТИНА 1 -->
+              <div class="navbar col-lg-7 col-md-8 col-sm-9 col-xs-6">
+                  <!-- Меню sm, xs-->
+                  <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                              data-target="#responsive-menu" style="float: left">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                      </button>
+                  </div>
+                  <!-- Меню md, lg-->
+                  <div class="collapse navbar-collapse" id="responsive-menu">
+                      <ul class="nav navbar-nav width-reponsive my-menu">
+                          <li><a href="{% url 'index' %}">{% trans "Головна" %}</a></li>
+                          <li><a href="{% url 'rooms' %}">{% trans "Номери" %}</a></li>
+                          <li><a href="{% url 'news' %}">{% trans "Новини" %}</a></li>
+                          <!-- <li><a href="/news/all/">{% trans "Новини" %}</a></li> -->
+                          <li><a href="{% url 'cont' %}">{% trans "Контакти" %}</a></li>
+                          <li><a href="{% url 'gallery' %}">{% trans "Галерея" %}</a></li>
+                          <li><a href="{% url 'services' %}">{% trans "Послуги" %}</a></li>
+                          <!-- <li class="visible-xs"><a href="/search/">{% trans "Пошук" %}</a></li> -->
+                          <li class="visible-xs"><a href="{% url 'almaz_plus' %}">{% trans "Алмаз+" %}</a></li>
+                          <li class="visible-xs"><a href="{% url 'almaz_tour' %}">{% trans "Алмаз-тур" %}</a></li>
+                          <li class="visible-xs"><a target="_blank"
+                                                    href="http://primapizza.com.ua/">{% trans "Піцерія" %}</a></li>
+                          <li class="visible-xs"><a target="_blank"
+                                                    href="http://poltava.beer-house.net.ua/">{% trans "Пивоварня" %}</a>
+                          </li>
+                          <li class="visible-xs"><a target="_blank"
+                                                    href="http://giraffe.primapizza.com.ua/en/">{% trans "Дитяча кімната" %}</a>
+                          </li>
+                          <li class="visible-xs"><a target="_blank"
+                                                    href="http://www.salon-dun-fan.com.ua/index.php">{% trans "Салон краси" %}</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+
+              <!-- Пошук, вибір мови, бронювання md, lg-->
+              <div class="col-lg-5 col-md-4 row visible-lg visible-md">
+                  <!-- Пошук -->
+                  <!-- <div class="col-md-1 col-lg-5" id="search-block">
+                      <form>
+                          <button type="submit" id="search-button">
+                              <a class="btn_search"></a>
+                          </button>
+                          <input type="text" id="search-input" class="visible-lg">
+                      </form>
+                  </div> -->
+
+                  <!-- Вибір мови -->
+                  <div class="col-lg-4 col-lg-offset-4 col-md-6" id="my_lang">
+                      <form action="{% url 'set_language' %}" method="post">
+                          {% csrf_token %}
+                          <input name="next" type="hidden" value="{{ request.get_full_path }}"/>
+                          <div class="dropdown lang_now">
+                            <a href="#" id="zd_locale" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false" value="{{ LANGUAGE_CODE }}">{{ LANGUAGE_CODE }}<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                  {% for language in languages %}
+                                      <li>
+                                          <button type="submit"
+                                                  name="language"
+                                                  value="{{ language.code }}">
+                                              {{ language.code }}
+                                          </button>
+                                      </li>
+                                  {% endfor %}
+                              </ul>
+                          </div>
+                      </form>
+                      <img src="{% static "img/icons/ico-world.svg" %}">
+                  </div>
+
+                  <!-- Кнопка "Бронювання" -->
+                  <div class="col-lg-4 col-md-6">
+                      <a href="{% url 'booking' %}" class="href-button-reserve">{% trans "Бронювання" %}</a>
+                  </div>
+              </div>
+
+              <!-- Пошук, вибір мови, бронювання sm, xs-->
+              <div class="col-sm-3 col-xs-6 visible-xs visible-sm my-xs-sm-ico">
+                  <a href="{% url 'booking' %}"><i class="glyphicon glyphicon-briefcase"></i></a>
+                  <div class="col-md-5 col-lg-3" id="my_lang">
+                      <form action="{% url 'set_language' %}" method="post">
+                          {% csrf_token %}
+                          <input name="next" type="hidden" value="{{ request.get_full_path }}"/>
+                          <div class="dropdown lang_now">
+                            <a href="#" id="zd_locale" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false" value="{{ LANGUAGE_CODE }}">{{ LANGUAGE_CODE }}<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                  {% for language in languages %}
+                                      <li>
+                                          <button type="submit"
+                                                  name="language"
+                                                  value="{{ language.code }}">
+                                              {{ language.code }}
+                                          </button>
+                                      </li>
+                                  {% endfor %}
+                              </ul>
+                          </div>
+                      </form>
+                      <!-- {#                        <img src="{% static "img/world.svg" %}">#} -->
+                  </div>
+                  <!-- <a href="#"><i class="icon-loupe hidden-xs"></i></a> -->
+                  <a href="#"><i class="my_call_menu visible-xs glyphicon glyphicon-earphone"></i></a>
+              </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ЧАСТИНА 2 -->
+
+    <div class="container-fluid" id="my_header_part2">
+
+        <div class="content-background">
+            <div class="content-foreground">
+                <div id="h_slider-2">
+                    <div class="">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <!-- Маркери слайдів -->
+                            <!-- {#                            <ol class="carousel-indicators">#}
+                            {#                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>#}
+                            {#                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>#}
+                            {#                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>#}
+                            {#                                <li data-target="#carousel-example-generic" data-slide-to="3"></li>#}
+                            {#                            </ol>#} -->
+
+                            <!-- Вміст слайдів -->
+                            <div class="carousel-inner">
+
+                                <div class="item active">
+                                    <a href="#"><img src="{% static "img/p-1.png" %}"></a>
+                                </div>
+
+                                <!-- {#                                <div class="item">#}
+                                {#                                    <a href="#"><img src="{% static "img/s2-2.png" %}"></a>#}
+                                {#                                </div>#}
+                                {##}
+                                {#                                <div class="item">#}
+                                {#                                    <a href="#"><img src="{% static "img/s2-3.png" %}"></a>#}
+                                {#                                </div>#}
+                                {##}
+                                {#                                <div class="item">#}
+                                {#                                    <a href="#"><img src="{% static "img/s2-4.png" %}"></a>#}
+                                {#                                </div>#} -->
+                            </div>
+
+                            <!-- Controls -->
+                            <!-- {#                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">#}
+                            {#                                <span class="glyphicon glyphicon-chevron-left"></span>#}
+                            {#                            </a>#}
+                            {#                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">#}
+                            {#                                <span class="glyphicon glyphicon-chevron-right"></span>#}
+                            {#                            </a>#} -->
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container-fluid" id="my_transparent_background">
+            <div class="container">
+                <div class="row" id="my_part2_container">
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" id="my_header_logo">
+                        <img src="{% static "img/logo/almaz_plus_old.svg" %}">
+                    </div>
+
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 row">
+
+                        <div class="col-lg-12 col-md-12 hidden-xs" id="my_header_ico">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="header-info">
+                                    <span><p>{% trans "вул. Київське шосе 60, м.Полтава, Україна" %}</p></span>
+                                    <span><img src="{% static "img/icons/ico-h-location.svg" %}"></span>
+                                </li>
+                                <li class="header-info">
+                                    <span><p>096 307 0900</p> </span>
+                                    <span><a class="my_call_menu img-link-2 phone"
+                                             onClick="$('#call-request').arcticmodal()" href="#"
+                                             title="Замовити зворотній дзвінок">
+
+<!-- {#                                        <img src="{% static "img/phone.png" %}">#} -->
+                                    </a></span>
+                                </li>
+                                <li class="header-info">
+                                    <span><p id="temp"></p></span>
+                                    <span><img src="{% static "img/icons/ico-h-cloud.svg" %}"></span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 hidden-xs" id="my_menu2">
+                            <ul class="nav navbar-nav navbar-right" id="my_plus_menu-2">
+                                <li><a href="/almaz-plus/">{% trans "Алмаз-плюс" %}</a></li>
+                                <li><a href="/almaz-tour/">{% trans "Алмаз-тур" %}</a></li>
+                                <li><a target="_blank" href="http://primapizza.com.ua/">{% trans "Піцерія" %}</a></li>
+                                <li><a target="_blank" href="http://poltava.beer-house.net.ua/">{% trans "Пивоварня" %}</a></li>
+                                <li><a target="_blank" href="http://giraffe.primapizza.com.ua/en/">{% trans "Дит. кімната" %}</a>
+                                </li>
+                                <li><a target="_blank" href="http://www.salon-dun-fan.com.ua/index.php">{% trans "Салон краси" %}</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div id="my_call_block">
+                        {% include "call_btn.html" %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

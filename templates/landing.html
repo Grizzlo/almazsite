@@ -1,0 +1,176 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{seo_title}}</title>
+    <meta name="Keywords" content="{{seo_keywords}}">
+    <meta name="Description" content="{{seo_description}}">
+    <meta name="Content-Language" content="{{lang}}">
+    <meta name="google-site-verification" content="k981hhbWR7CbuHu8FFpGV2i7oRvYyEv6VFG1zsMhUb4" />
+    {% include "add_styles.html" %}
+</head>
+<body>
+{% include "header.html" %}
+
+<div class="my_wrapper">
+    <div id="h_info">
+        <div class="container">
+            <img class="center-block" src="{% static "img/hotel.svg" %}">
+            <p>{% trans "Ласкаво просимо до готельного комплексу &quot;Алмаз&quot;, розташованого в історичному, культурному та діловому центрі Полтави, на 360 кілометрі автомагістралі Київ - Харків, в 13 км від центру міста." %}</p>
+            <p>{% trans "Ми завжди раді запропонувати Вам сучасні та обладнані всім необхідним номери: стандарт, напівлюкс та люкс. У кожному номері є все, що необхідно сучасному туристу: кондиціонер, супутникове ТБ, доступ до Інтернету." %}</p>
+            <p>{% trans "До ваших послуг: салон краси, приватна пивоварня та туристична агенція." %}</p>
+        </div>
+    </div>
+
+    <div id="h_rooms">
+        <div class="container">
+            <div class="row">
+                    <div class="block col-md-4">
+                        <div class="white-space">{% trans "Стандарт" %}</div>
+                        <img src="{% static "img/blocks/standart.jpg" %}" class="img-responsive">
+                        <div class="block-bottom">
+                            <h2>{% trans "Від 250 грн." %}</h2>
+                            <a class="btn-1" href="{% url 'booking' %}">{% trans "Забронювати" %}</a>
+                        </div>
+                   </div>
+                   <div class="block col-md-4">
+                       <div class="white-space">{% trans "Напівлюкс" %}</div>
+                       <img src="{% static "img/blocks/half-lux.jpg" %}" class="img-responsive">
+                       <div class="block-bottom">
+                           <h2>{% trans "Від 450 грн." %}</h2>
+                           <a class="btn-1" href="{% url 'booking' %}">{% trans "Забронювати" %}</a>
+                       </div>
+                  </div>
+                  <div class="block col-md-4">
+                      <div class="white-space">{% trans "Люкс" %}</div>
+                      <img src="{% static "img/blocks/lux.jpg" %}" class="img-responsive">
+                      <div class="block-bottom">
+                          <h2>{% trans "Від 700 грн." %}</h2>
+                          <a class="btn-1" href="{% url 'booking' %}">{% trans "Забронювати" %}</a>
+                      </div>
+                 </div>
+            </div>
+            <div class="h_text">
+                <h2>{% trans "У нашому готелі на вас чекають комфортабельні номери люкс, напівлюкс та стандарт" %}</h2>
+            </div>
+        </div>
+    </div>
+
+    <div id="h_comments">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <img src="{% static "img/girl.png" %}">
+                    <p>{% trans "&quot;Помірні ціни. Персонал привітливий. Номери на свою ціну хороші. Великим плюсом є піцерія поруч. Голодним не залишишся&quot;" %}</p>
+                    <h4><a href="https://www.google.com/maps/contrib/109559033265913206939/reviews/@49.7224085,35.355438,9z/data=!3m1!4b1!4m3!8m2!3m1!1e1?hl=uk-UA" target="_blank">Aljona Hnojova</a></h4>
+                    <br><br>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <img src="{% static "img/man.png" %} ">
+                    <p>{% trans " &quot;Відмінний готель! Зупиняюся в ньому постійно! Затишні, чисті номери, приємний персонал! При готелі є ресторан, в якому готують дуже смачну піцу на дровах і варять багато сортів відмінного пива! Рекомендую!!!&quot;" %}</p>
+                    <h4><a href="https://www.google.com/maps/contrib/114802426873739096001/reviews/@48.5584447,29.5328082,7z/data=!3m1!4b1!4m3!8m2!3m1!1e1?hl=uk-UA" target="_blank">Yurii Klimenko</a></h4>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="h_slider">
+        <div class="container">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Маркери слайдів -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+                </ol>
+
+                <!-- Вміст слайдів -->
+                <div class="carousel-inner">
+
+                    <div class="item active">
+                        <a href="http://www.poltava.beer-house.net.ua/" target="_blank"><img
+                                src="{% static "img/slider/s1-1.jpg" %}"></a>
+                        <div class="carousel-caption">
+                            <h3 class="hidden-xs">{% trans "Пивоварня" %}</h3>
+                            <h4 class="visible-xs">{% trans "Пивоварня" %}</h4>
+                            <p class="hidden-xs">{% trans "Приватна пивоварня у Полтаві!" %}</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <a href="http://primapizza.com.ua/" target="_blank"><img src="{% static "img/slider/s1-2.jpg" %}"></a>
+                        <div class="carousel-caption">
+                            <h3 class="hidden-xs">{% trans "Піццерія" %}</h3>
+                            <h4 class="visible-xs">{% trans "Піццерія" %}</h4>
+                            <p class="hidden-xs">{% trans "Піцца на дровах" %}</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <a><img src="{% static "img/slider/s1-3.jpg" %}"></a>
+                        <div class="carousel-caption">
+                            <h3 class="hidden-xs">{% trans "Конференц-зал" %}</h3>
+                            <h4 class="visible-xs">{% trans "Конференц-зал" %}</h4>
+                            <p class="hidden-xs">{% trans "Зала на 35 місць" %}</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <a href="http://www.salon-dun-fan.com.ua/index.php" target="_blank"><img
+                                src="{% static "img/slider/s1-4.jpg" %}"></a>
+                        <div class="carousel-caption">
+                            <h3 class="hidden-xs">{% trans "Салон краси" %}</h3>
+                            <h4 class="visible-xs">{% trans "Салон краси" %}</h4>
+                            <p class="hidden-xs">{% trans "Салон Дун-Фан" %}</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <a href="http://giraffe.primapizza.com.ua/en/" target="_blank"><img
+                                src="{% static "img/slider/s1-5.jpg" %}"></a>
+                        <div class="carousel-caption">
+                            <h3 class="hidden-xs">{% trans "Дитяча кімната" %}</h3>
+                            <h4 class="visible-xs">{% trans "Дитяча кімната" %}</h4>
+                            <p class="hidden-xs">{% trans "Ігрова кімната &quot;Жираф&quot;" %}</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <a href="http://giraffe.primapizza.com.ua/en/" target="_blank"><img
+                                src="{% static "img/slider/s1-7.jpg" %}"></a>
+                        <div class="carousel-caption">
+                            <h3 class="hidden-xs">{% trans "Смачні страви" %}</h3>
+                            <h4 class="visible-xs">{% trans "Смачні страви" %}</h4>
+                            <p class="hidden-xs">{% trans "Страви за рецептами кращих італійських майстрів" %}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+
+            <div class="h_text">
+                <h2>{% trans "До вашої уваги наступні послуги: пивоварня, піцерія, конференц-зал, салон краси, дитяча кімната" %}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="#" class="my_scroll_up"></a>
+
+{% include "footer.html" %}
+{% include "add_scripts.html" %}
+</body>
+</html>

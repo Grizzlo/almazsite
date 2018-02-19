@@ -1,0 +1,109 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="uk-UA">
+<head>
+  <title>{{seo_title}}</title>
+  <meta name="Keywords" content="{{seo_keywords}}">
+  <meta name="Description" content="{{seo_description}}">
+  <meta name="Content-Language" content="{{lang}}">
+  {% include "add_styles.html" %}
+</head>
+<body>
+{% include "header.html" %}
+
+<div class="my_wrapper">
+    <div class="container">
+
+        <h2>{% trans "Контактна інформація" %}</h2>
+        <div class="my_contacts row">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <h2>{% trans "Алмаз" %}</h2>
+                <p><img src="{% static "img/icons/ico-location.svg" %}" alt="location">
+                    {% trans "вул.&nbsp;Київське шосе,&nbsp;60, м.&nbsp;Полтава" %} </p>
+                <p><img src="{% static "img/icons/ico-phone.svg" %}" alt="phone">
+                    (096)&nbsp;307&nbsp;0900, (066)&nbsp;711&nbsp;7772, (053)&nbsp;268&nbsp;1168</p>
+                <p><img src="{% static "img/icons/ico-envelope.svg" %}" alt="email">
+                    hotel.almaz@ukr.net</p>
+            </div>
+            <iframe class="col-sm-8 col-md-8 col-lg-8"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2587.8017080171057!2d34.50349691216925!3d49.56376451980584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d82f2895f61b0b%3A0x80b550b4e5478c56!2z0JDQu9C80LDQtw!5e0!3m2!1suk!2sua!4v1513868386299"
+                    width="100%" height="250px" frameborder="0">
+            </iframe>
+        </div>
+
+        <div class="my_contacts row">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <h2>{% trans "Алмаз-плюс" %}</h2>
+                <p><img src="{% static "img/icons/ico-location.svg" %}" alt="location">
+                    {% trans "вул.&nbsp;Білоуська,&nbsp;52/1, с.&nbsp;Абазівка, Полтавська&nbsp;обл." %}</p>
+                <p><img src="{% static "img/icons/ico-phone.svg" %}" alt="phone">
+                    (050)&nbsp;042&nbsp;9885, (096)&nbsp;423&nbsp;2828</p>
+            </div>
+            <iframe class="col-sm-8 col-md-8 col-lg-8"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2585.628313117192!2d34.3396592!3d49.6047583!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d7877258ada357%3A0xca230dfdbee336b8!2z0JDQu9C80LDQtyDQv9C70Y7RgQ!5e0!3m2!1suk!2sua!4v1513870770520"
+                    width="100%" height="250px" frameborder="0">
+            </iframe>
+        </div>
+
+        <div class="my_contacts row">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <h2>{% trans "Алмаз тур" %}</h2>
+                <p><img src="{% static "img/icons/ico-location.svg" %}" alt="location">
+                    {% trans "вул.&nbsp;Київське шосе,&nbsp;60, м.&nbsp;Полтава" %} </p>
+                <p><img src="{% static "img/icons/ico-phone.svg" %}" alt="phone">
+                    (050)&nbsp;627&nbsp;7922, (067)&nbsp;992&nbsp;0601, (053)&nbsp;263&nbsp;1881</p>
+                <p><img src="{% static "img/icons/ico-envelope.svg" %}" alt="email">
+                    tour.almaz@ukr.net</p>
+            </div>
+            <iframe class="col-sm-8 col-md-8 col-lg-8"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2587.8017080171057!2d34.50349691216925!3d49.56376451980584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d82f2895f61b0b%3A0x80b550b4e5478c56!2z0JDQu9C80LDQtw!5e0!3m2!1suk!2sua!4v1513868386299"
+                    width="100%" height="250px" frameborder="0">
+            </iframe>
+        </div>
+
+        <!-- <div class="my_contacts row">
+            <h2>{% trans "Зворотній зв'язок" %}</h2>
+            <form class="form-horizontal col-sm-offset-1 col-sm-9 col-md-offset-1 col-md-8"
+                  method="post">{% csrf_token %}
+                <div class="form-group">
+                    <label for="clientName" class="col-sm-4 col-md-4 control-label">{% trans "Прізвище, ім'я" %}</label>
+                    <div class="col-sm-8 col-md-8">
+                        <input type="text" class="form-control" id="clientName" name="clientName"
+                               placeholder="ПІП">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="clientEmail" class="col-sm-4 col-md-4 control-label">{% trans "Електронна адреса" %}</label>
+                    <div class="col-sm-8 col-md-8">
+                        <input type="email" class="form-control" id="clientEmail" name="clientEmail"
+                               placeholder="example@gmail.com">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="clientComment" class="col-sm-4 col-md-4 control-label">{% trans "Повідомлення" %}</label>
+                    <div class="col-sm-8 col-md-8">
+                        <textarea id="clientComment" name="clientComment" class="form-control" rows="3"
+                                  placeholder="..."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-8 col-md-offset-4 col-md-8">
+                        <button type="submit" class="btn-2">{% trans "Відправити" %}</button>
+                    </div>
+                </div>
+            </form>
+        </div> -->
+
+    </div>
+</div>
+
+<a href="#" class="my_scroll_up"></a>
+
+{% include "footer.html" %}
+{% include "add_scripts.html" %}
+</body>
+</html>

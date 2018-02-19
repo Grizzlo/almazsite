@@ -1,0 +1,31 @@
+{% load i18n %}
+{% load staticfiles %}
+{% block call %}
+
+<div class="container">
+
+    <div id="my_close">
+        <a href="#" class="my_call_menu closex" onClick="$('#call-request').arcticmodal()"></a>
+    </div>
+
+    <br>
+
+    <h2>Зателефонувати нам</h2>
+    <div class="">
+      <p>
+        <img src="{% static 'img/icons/skype.svg' %} " alt="location" width="25px">
+        <a href="skype:+380667117772?call">+38 066 711 7772 (Skype)</a>
+      </p>
+      <p>
+        <img src="{% static 'img/icons/viber.svg' %} " alt="location" width="25px">
+        <a href="viber://tel:+380667117772">+38 066 711 7772 (Viber)</a>
+        <!-- <a href="viber://tel:380667117772">+38 066 711 7772 (Viber)</a> -->
+      </p>
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}
